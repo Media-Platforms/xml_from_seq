@@ -16,7 +16,7 @@ class XMLTests(unittest.TestCase):
 
     def test_XMLdecl(self):
         x = XMLdecl(xmlns='http://example.com/foo.xml')
-        assert x == '<?xml xmlns="http://example.com/foo.xml" version="1.0"?>\n'
+        assert x == '<?xml version="1.0" xmlns="http://example.com/foo.xml"?>\n'
 
 
 if __name__ == '__main__':

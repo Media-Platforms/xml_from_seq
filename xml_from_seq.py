@@ -74,7 +74,5 @@ def is_seq(x):
 
 
 def XMLdecl(**attrs):
-    if not attrs.get('version'):
-        attrs['version'] = '1.0'
-    parts = '<?xml', attributes(attrs), '?>\n'
+    parts = '<?xml', attributes({'version': attrs.pop('version', '1.0')}), attributes(attrs), '?>\n'
     return ''.join(parts)
