@@ -12,6 +12,8 @@ def XML(*seq, indent=0, cr=True):
 
 
 def element_or_text(x, i=0, cr=True):
+    if x in (False, None):
+        return ''
     t = '\n' if cr else ''
     if is_seq(x):
         return element(*x, i=i) + t

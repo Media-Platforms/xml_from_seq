@@ -29,11 +29,11 @@ print(XML(item))
 </item>
 ```
 
-If a element's name is `None` its contents will appear in its place. If an attribute's value is
-`None` it will be omitted.
+If an element is False or None it will be omitted. If a element's name is `None` its contents will
+appear in its place. If an attribute's value is `None` it will be omitted.
 
-If an element's name is a list or tuple, it will be inserted into the XML as-is – so you can inclue
-already-rendered XML by double-bracketing it:
+If an element's name is a list or tuple, it will be inserted into the XML as-is – so you can
+include already-rendered XML by double-bracketing it:
 ```py
 print(XML([['<foo>123</foo>']]))
 ```

@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='xml_from_seq',
-    version='0.2.0',
+    version='0.3.1',
     description='Generate XML from Python data structure',
     author='Nic Wolff',
     author_email='nwolff@hearst.com',
