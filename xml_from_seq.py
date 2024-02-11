@@ -2,8 +2,8 @@ from collections.abc import Sequence
 from functools import partial
 from xml.sax.saxutils import escape, quoteattr
 
-
 INLINE = object()
+CDATA = object()
 
 
 def XML(*seq, indent=0, cr=True):
@@ -17,8 +17,7 @@ def element_or_text(x, i=0, cr=True):
     t = '\n' if cr else ''
     if is_seq(x):
         return element(*x, i=i) + t
-    else:
-        return ('\t' * i) + escape(str(x)) + t
+    return ('\t' * i) + escape(str(x)) + t
 
 
 def element(tag_name, *content, i=0):
@@ -30,8 +29,13 @@ def element(tag_name, *content, i=0):
     else:
         attrs = None
 
+    cdata = False
+    if tag_name is CDATA:
+        tag_name = '![CDATA['
+        cdata = True
+
     inline = False
-    if content and content[0] == INLINE:
+    if content and content[0] is INLINE:
         _, *content = content
         inline = True
 
@@ -41,6 +45,8 @@ def element(tag_name, *content, i=0):
     parts = ['\t' * i, '<', tag_name, attributes(attrs)]
     if inline:
         parts.extend(('>', XML(*content, indent=0, cr=False), f'</{tag_name}>'))
+    elif cdata:
+        parts.extend((*content, ']]>'))
     elif content:
         parts.extend(('>\n', XML(*content, indent=i+1), '\t' * i, f'</{tag_name}>'))
     else:

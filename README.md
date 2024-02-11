@@ -41,6 +41,9 @@ print(XML([['<foo>123</foo>']]))
 <foo>123</foo>
 ```
 
+If an element's tag name is `xml_from_seq.CDATA`, that element's content will be rendered unescaped
+in a `<![CDATA[...]]>` section.
+
 ### Indentation and line breaks
 
 If the first item in an element (not counting an attribute dict) is `xml_from_seq.INLINE`, that
