@@ -22,6 +22,10 @@ class XMLTests(unittest.TestCase):
         x = XMLdecl(xmlns='http://example.com/foo.xml')
         assert x == '<?xml version="1.0" xmlns="http://example.com/foo.xml"?>\n'
 
+    def test_zero_value(self):
+        b = ['duration', INLINE, 0]
+        assert XML(b) == '<duration>0</duration>\n'
+
 
 if __name__ == '__main__':
     unittest.main()
