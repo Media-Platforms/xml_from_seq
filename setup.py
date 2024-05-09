@@ -10,7 +10,7 @@ setup(
     license='MIT',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url='https://github.com/nicwolff/xml_from_seq',
+    url='https://github.com/Media-Platforms/xml_from_seq',
     py_modules=['xml_from_seq'],
     classifiers=[
         "Programming Language :: Python :: 3",
