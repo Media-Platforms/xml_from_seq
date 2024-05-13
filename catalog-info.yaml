@@ -1,0 +1,16 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: xml-from-seq
+  description: |
+    Generate XML from a Python data structure.
+  tags:
+    - python
+    - xml
+  annotations:
+    github.com/project-slug: Media-Platforms/xml_from_seq
+spec:
+  type: library
+  lifecycle: production
+  owner: core-tech
