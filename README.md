@@ -15,7 +15,7 @@ assert XML(item) == '<item attr1="123" attr2="other value">This is the content o
 
 item = [
     'item',
-    'This is some content of the item.'
+    'This is some content of the item.',
     ['sub', 'This is the content of a subelement.']
 ]
 print(XML(item))
