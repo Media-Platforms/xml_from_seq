@@ -21,7 +21,7 @@ item = [
 print(XML(item))
 ```
 ```xml
- <item>
+<item>
     This is some content of the item.
     <sub>
         This is the content of a subelement.
@@ -53,13 +53,13 @@ from xml_from_seq import INLINE, XML
 
 item = [
     'item',
-    'This is some content of the item.'
+    'This is some content of the item.',
     ['sub', INLINE, 'This is the content of a subelement.']
 ]
 print(XML(item))
 ```
 ```xml
- <item>
+<item>
     This is some content of the item.
     <sub>This is the content of a subelement.</sub>
 </item>
